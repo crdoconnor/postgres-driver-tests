@@ -1,0 +1,9 @@
+{% for postgres_version in postgres_versions %}
+- name: Stub
+  preconditions:
+    postgres_version: {{ postgres_version }}
+  scenario:
+    - Run: python cplusplus.py
+    - Exit
+    - Run SQL: create table something;
+{% endfor %}
